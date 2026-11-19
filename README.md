@@ -1,58 +1,58 @@
 # CodeAlpha Project Management Tool
 
-Application de gestion de projets avec tableau Kanban, suivi des tâches et notifications en temps réel.
+Project management application with a Kanban board, task tracking, and real-time notifications.
 
-## Fonctionnalités
+## Features
 
-- Inscription et connexion avec authentification JWT
-- Création de projets et gestion des membres
-- Tableaux Kanban avec glisser-déposer et colonnes personnalisables
-- Tâches avec priorités, dates d'échéance, étiquettes, checklists et commentaires
-- Notifications en temps réel avec Socket.IO
-- Tableau de bord avec statistiques et progression des projets
+- User registration and login with JWT authentication
+- Project creation and member management
+- Kanban boards with drag-and-drop and customizable columns
+- Tasks with priorities, due dates, labels, checklists, and comments
+- Real-time notifications with Socket.IO
+- Dashboard with statistics and project progress
 
-## Structure du projet
+## Project Structure
 
 ```text
 .
 ├── client/
 │   ├── public/
 │   └── src/
-│       ├── api/           # Configuration des requêtes HTTP
-│       ├── components/    # Composants réutilisables
-│       ├── context/       # État global, dont l'authentification
-│       ├── pages/         # Pages de l'application
-│       ├── styles/        # Thème et styles
-│       └── utils/         # Fonctions utilitaires
+│       ├── api/           # HTTP request configuration
+│       ├── components/    # Reusable components
+│       ├── context/       # Global state, including authentication
+│       ├── pages/         # Application pages
+│       ├── styles/        # Theme and styles
+│       └── utils/         # Utility functions
 └── server/
-    ├── config/            # Connexion à la base de données
-    ├── controllers/       # Logique des API
-    ├── middleware/        # Authentification et middleware
-    ├── models/            # Modèles MongoDB
-    ├── routes/            # Routes Express
-    ├── utils/             # Fonctions serveur partagées
-    ├── server.js          # Démarrage de l'API
-    └── socket.js           # Configuration Socket.IO
+    ├── config/            # Database connection
+    ├── controllers/       # API logic
+    ├── middleware/        # Authentication and middleware
+    ├── models/            # MongoDB models
+    ├── routes/            # Express routes
+    ├── utils/             # Shared server functions
+    ├── server.js          # API startup
+    └── socket.js           # Socket.IO configuration
 ```
 
-## Prérequis
+## Requirements
 
-- Node.js et npm
-- MongoDB local ou une instance MongoDB accessible
+- Node.js and npm
+- Local MongoDB or an accessible MongoDB instance
 
-## Configuration du serveur
+## Server Configuration
 
-Depuis le dossier `server`, créez un fichier `.env` :
+From the `server` directory, create a `.env` file:
 
 ```env
 MONGO_URI=mongodb://127.0.0.1:27017/codealpha_project_management
-JWT_SECRET=remplacez_par_une_cle_aleatoire_longue
+JWT_SECRET=replace_with_a_long_random_key
 PORT=5000
 ```
 
-Le serveur lit ce fichier depuis `server/.env`. Ne partagez pas ce fichier et ne commitez pas vos secrets.
+The server reads this file from `server/.env`. Do not share this file or commit your secrets.
 
-Installez les dépendances et démarrez l'API :
+Install the dependencies and start the API:
 
 ```bash
 cd server
@@ -60,11 +60,11 @@ npm install
 npm run dev
 ```
 
-L'API est disponible sur `http://localhost:5000`.
+The API is available at `http://localhost:5000`.
 
-## Démarrer le client
+## Start the Client
 
-Dans un autre terminal, à la racine du projet :
+In another terminal, from the project root:
 
 ```bash
 cd client
@@ -72,11 +72,11 @@ npm install
 npm run dev
 ```
 
-Ouvrez `http://localhost:5173`. Le client utilise l'API à `http://localhost:5000`.
+Open `http://localhost:5173`. The client uses the API at `http://localhost:5000`.
 
-## Vérifications du client
+## Client Checks
 
-Depuis le dossier `client` :
+From the `client` directory:
 
 ```bash
 npm run lint
